@@ -1,0 +1,195 @@
+{smcl}
+{txt}{sf}{ul off}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}/Users/kwantlin/My Documents/Harvard 2018-2019/Econ 1152/Project 1/Project_2_Log_File.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res} 8 Mar 2019, 23:42:09
+
+{com}. 
+. use "/Users/kwantlin/Downloads/grade5.dta"
+
+. 
+. *** Question 4 ***
+
+. *Part 4A
+
+. 
+. binscatter classize school_enrollment if inrange(school_enrollment,20,60), rd(40.5) discrete line(lfit) 
+{res}
+{com}. graph save Graph "/Users/kwantlin/My Documents/Harvard 2018-2019/Econ 1152/Project 2/Graph1.gph", replace
+{res}{txt}(file /Users/kwantlin/My Documents/Harvard 2018-2019/Econ 1152/Project 2/Graph1.gph saved)
+
+{com}. 
+. binscatter classize school_enrollment if inrange(school_enrollment,20,60), rd(40.5) discrete line(qfit)
+{res}
+{com}. graph save Graph "/Users/kwantlin/My Documents/Harvard 2018-2019/Econ 1152/Project 2/Graph2.gph", replace
+{res}{txt}(file /Users/kwantlin/My Documents/Harvard 2018-2019/Econ 1152/Project 2/Graph2.gph saved)
+
+{com}. *Quadratic fit seems better for classize.
+
+. 
+. *Part 4B
+
+. 
+. binscatter avgmath school_enrollment if inrange(school_enrollment,20,60), rd(40.5) discrete line(lfit)
+{res}
+{com}. graph save Graph "/Users/kwantlin/My Documents/Harvard 2018-2019/Econ 1152/Project 2/Graph4B1.gph", replace
+{res}{txt}(file /Users/kwantlin/My Documents/Harvard 2018-2019/Econ 1152/Project 2/Graph4B1.gph saved)
+
+{com}. 
+. binscatter avgmath school_enrollment if inrange(school_enrollment,20,60), rd(40.5) discrete line(qfit)
+{res}
+{com}. graph save Graph "/Users/kwantlin/My Documents/Harvard 2018-2019/Econ 1152/Project 2/Graph4B2.gph", replace
+{res}{txt}(file /Users/kwantlin/My Documents/Harvard 2018-2019/Econ 1152/Project 2/Graph4B2.gph saved)
+
+{com}. *Linear fit seems better for avgmth.
+
+. 
+. binscatter avgverb school_enrollment if inrange(school_enrollment,20,60), rd(40.5) discrete line(lfit)
+{res}
+{com}. graph save Graph "/Users/kwantlin/My Documents/Harvard 2018-2019/Econ 1152/Project 2/Graph4B3.gph", replace
+{res}{txt}(file /Users/kwantlin/My Documents/Harvard 2018-2019/Econ 1152/Project 2/Graph4B3.gph saved)
+
+{com}. 
+. binscatter avgverb school_enrollment if inrange(school_enrollment,20,60), rd(40.5) discrete line(qfit)
+{res}
+{com}. graph save Graph "/Users/kwantlin/My Documents/Harvard 2018-2019/Econ 1152/Project 2/Graph4B4.gph", replace
+{res}{txt}(file /Users/kwantlin/My Documents/Harvard 2018-2019/Econ 1152/Project 2/Graph4B4.gph saved)
+
+{com}. *Linear fit seems better for avgverb.
+
+. 
+. *Part 4C
+
+. 
+. binscatter disadvantaged school_enrollment if inrange(school_enrollment,20,60), rd(40.5) discrete line(lfit)
+{res}
+{com}. graph save Graph "/Users/kwantlin/My Documents/Harvard 2018-2019/Econ 1152/Project 2/Graph4C1.gph", replace
+{res}{txt}(file /Users/kwantlin/My Documents/Harvard 2018-2019/Econ 1152/Project 2/Graph4C1.gph saved)
+
+{com}. 
+. binscatter disadvantaged school_enrollment if inrange(school_enrollment,20,60), rd(40.5) discrete line(qfit)
+{res}
+{com}. graph save Graph "/Users/kwantlin/My Documents/Harvard 2018-2019/Econ 1152/Project 2/Graph4C2.gph", replace
+{res}{txt}(file /Users/kwantlin/My Documents/Harvard 2018-2019/Econ 1152/Project 2/Graph4C2.gph saved)
+
+{com}. *Linear fit is better for disadvantaged.
+
+. 
+. binscatter religious school_enrollment if inrange(school_enrollment,20,60), rd(40.5) discrete line(lfit)
+{res}
+{com}. graph save Graph "/Users/kwantlin/My Documents/Harvard 2018-2019/Econ 1152/Project 2/Graph4C3.gph", replace
+{res}{txt}(file /Users/kwantlin/My Documents/Harvard 2018-2019/Econ 1152/Project 2/Graph4C3.gph saved)
+
+{com}. 
+. binscatter religious school_enrollment if inrange(school_enrollment,20,60), rd(40.5) discrete line(qfit)
+{res}
+{com}. graph save Graph "/Users/kwantlin/My Documents/Harvard 2018-2019/Econ 1152/Project 2/Graph4C4.gph", replace
+{res}{txt}(file /Users/kwantlin/My Documents/Harvard 2018-2019/Econ 1152/Project 2/Graph4C4.gph saved)
+
+{com}. *Linear fit is better for religious.
+
+. 
+. binscatter female school_enrollment if inrange(school_enrollment,20,60), rd(40.5) discrete line(lfit)
+{res}
+{com}. graph save Graph "/Users/kwantlin/My Documents/Harvard 2018-2019/Econ 1152/Project 2/Graph4C5.gph", replace
+{res}{txt}(file /Users/kwantlin/My Documents/Harvard 2018-2019/Econ 1152/Project 2/Graph4C5.gph saved)
+
+{com}. 
+. binscatter female school_enrollment if inrange(school_enrollment,20,60), rd(40.5) discrete line(qfit)
+{res}
+{com}. graph save Graph "/Users/kwantlin/My Documents/Harvard 2018-2019/Econ 1152/Project 2/Graph4C6.gph", replace
+{res}{txt}(file /Users/kwantlin/My Documents/Harvard 2018-2019/Econ 1152/Project 2/Graph4C6.gph saved)
+
+{com}. *Quadratic fit is better for female.
+
+. 
+. *Part 4D
+
+. collapse (mean) school_enrollment, by(schlcode )
+
+. twoway (histogram school_enrollment if inrange(school_enrollment,20,60), discrete frequency), xline(40.5)
+{res}
+{com}. 
+. *Reload data
+
+. use "/Users/kwantlin/Downloads/grade5.dta", clear
+
+. 
+. *** Question 5 ***
+
+. gen above40 = 0
+
+. replace above40 = 1 if school_enrollment > 40
+{txt}(1,724 real changes made)
+
+{com}. gen x = school_enrollment - 40
+
+. gen x_above40 = x*above40
+
+. reg classize above40 x x_above40 if inrange(school_enrollment,0,80), cluster(schlcode)
+
+{txt}Linear regression                               Number of obs     = {res}     1,180
+                                                {txt}F(3, 730)         =  {res}   447.68
+                                                {txt}Prob > F          = {res}    0.0000
+                                                {txt}R-squared         = {res}    0.5411
+                                                {txt}Root MSE          =    {res} 4.4701
+
+{txt}{ralign 78:(Std. Err. adjusted for {res:731} clusters in schlcode)}
+{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}    Robust
+{col 1}    classize{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 5}above40 {c |}{col 14}{res}{space 2}-11.00075{col 26}{space 2}  1.18299{col 37}{space 1}   -9.30{col 46}{space 3}0.000{col 54}{space 4}-13.32322{col 67}{space 3} -8.67828
+{txt}{space 11}x {c |}{col 14}{res}{space 2} .6725232{col 26}{space 2} .0569927{col 37}{space 1}   11.80{col 46}{space 3}0.000{col 54}{space 4} .5606341{col 67}{space 3} .7844122
+{txt}{space 3}x_above40 {c |}{col 14}{res}{space 2}-.3417826{col 26}{space 2} .0602566{col 37}{space 1}   -5.67{col 46}{space 3}0.000{col 54}{space 4}-.4600794{col 67}{space 3}-.2234857
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} 33.04583{col 26}{space 2} 1.133772{col 37}{space 1}   29.15{col 46}{space 3}0.000{col 54}{space 4} 30.81999{col 67}{space 3} 35.27168
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}
+{com}. reg avgmath above40 x x_above40 if inrange(school_enrollment,0,80), cluster(schlcode)
+
+{txt}Linear regression                               Number of obs     = {res}     1,180
+                                                {txt}F(3, 730)         =  {res}     8.45
+                                                {txt}Prob > F          = {res}    0.0000
+                                                {txt}R-squared         = {res}    0.0323
+                                                {txt}Root MSE          =    {res} 9.9162
+
+{txt}{ralign 78:(Std. Err. adjusted for {res:731} clusters in schlcode)}
+{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}    Robust
+{col 1}     avgmath{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 5}above40 {c |}{col 14}{res}{space 2} 3.428896{col 26}{space 2} 1.612143{col 37}{space 1}    2.13{col 46}{space 3}0.034{col 54}{space 4} .2639069{col 67}{space 3} 6.593886
+{txt}{space 11}x {c |}{col 14}{res}{space 2} -.192629{col 26}{space 2} .0817787{col 37}{space 1}   -2.36{col 46}{space 3}0.019{col 54}{space 4}-.3531785{col 67}{space 3}-.0320795
+{txt}{space 3}x_above40 {c |}{col 14}{res}{space 2}  .298097{col 26}{space 2} .0900022{col 37}{space 1}    3.31{col 46}{space 3}0.001{col 54}{space 4} .1214031{col 67}{space 3}  .474791
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} 60.82845{col 26}{space 2}   1.3658{col 37}{space 1}   44.54{col 46}{space 3}0.000{col 54}{space 4} 58.14709{col 67}{space 3} 63.50982
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}
+{com}. reg avgverb above40 x x_above40 if inrange(school_enrollment,0,80), cluster(schlcode)
+
+{txt}Linear regression                               Number of obs     = {res}     1,180
+                                                {txt}F(3, 730)         =  {res}     4.49
+                                                {txt}Prob > F          = {res}    0.0039
+                                                {txt}R-squared         = {res}    0.0181
+                                                {txt}Root MSE          =    {res} 8.3873
+
+{txt}{ralign 78:(Std. Err. adjusted for {res:731} clusters in schlcode)}
+{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}    Robust
+{col 1}     avgverb{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 5}above40 {c |}{col 14}{res}{space 2} 2.628131{col 26}{space 2} 1.497048{col 37}{space 1}    1.76{col 46}{space 3}0.080{col 54}{space 4}-.3109008{col 67}{space 3} 5.567164
+{txt}{space 11}x {c |}{col 14}{res}{space 2}-.1643771{col 26}{space 2} .0772686{col 37}{space 1}   -2.13{col 46}{space 3}0.034{col 54}{space 4}-.3160722{col 67}{space 3}-.0126821
+{txt}{space 3}x_above40 {c |}{col 14}{res}{space 2} .2258534{col 26}{space 2} .0830446{col 37}{space 1}    2.72{col 46}{space 3}0.007{col 54}{space 4} .0628187{col 67}{space 3} .3888881
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} 69.82073{col 26}{space 2} 1.298142{col 37}{space 1}   53.79{col 46}{space 3}0.000{col 54}{space 4} 67.27219{col 67}{space 3} 72.36926
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}
+{com}. 
+. log close
+      {txt}name:  {res}<unnamed>
+       {txt}log:  {res}/Users/kwantlin/My Documents/Harvard 2018-2019/Econ 1152/Project 1/Project_2_Log_File.smcl
+  {txt}log type:  {res}smcl
+ {txt}closed on:  {res} 8 Mar 2019, 23:42:26
+{txt}{.-}
+{smcl}
+{txt}{sf}{ul off}

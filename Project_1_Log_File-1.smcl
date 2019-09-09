@@ -1,0 +1,1247 @@
+{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}/Users/kwantlin/My Documents/Harvard 2018-2019/Econ 1152/Project 1/Project_1_Log_File.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}22 Feb 2019, 00:23:34
+
+{com}. 
+. * Load in the data
+
+. use "/Users/kwantlin/Downloads/atlas_ranks.dta"
+
+. 
+. * List data for my home tract
+
+. list kfr_pooled_p25 if state==55 & county == 079 & tract == 186100
+{txt}
+       {c TLC}{hline 10}{c TRC}
+       {c |} {res}kfr_p~25 {txt}{c |}
+       {c LT}{hline 10}{c RT}
+71873. {c |} {res}23087.95 {txt}{c |}
+       {c BLC}{hline 10}{c BRC}
+
+{com}. 
+. * List data for my home county
+
+. list kfr_pooled_p25 if state==55 & county == 079 
+{txt}
+       {c TLC}{hline 10}{c TRC}
+       {c |} {res}kfr_p~25 {txt}{c |}
+       {c LT}{hline 10}{c RT}
+71589. {c |} {res}28055.93 {txt}{c |}
+71590. {c |} {res}26012.18 {txt}{c |}
+71591. {c |} {res} 23550.6 {txt}{c |}
+71592. {c |} {res}26863.24 {txt}{c |}
+71593. {c |} {res}47825.55 {txt}{c |}
+       {c LT}{hline 10}{c RT}
+71594. {c |} {res} 24128.5 {txt}{c |}
+71595. {c |} {res}38092.69 {txt}{c |}
+71596. {c |} {res}34227.27 {txt}{c |}
+71597. {c |} {res}23604.44 {txt}{c |}
+71598. {c |} {res}31994.77 {txt}{c |}
+       {c LT}{hline 10}{c RT}
+71599. {c |} {res}23031.53 {txt}{c |}
+71600. {c |} {res}24915.88 {txt}{c |}
+71601. {c |} {res}27207.38 {txt}{c |}
+71602. {c |} {res}25677.84 {txt}{c |}
+71603. {c |} {res}28181.88 {txt}{c |}
+       {c LT}{hline 10}{c RT}
+71604. {c |} {res}24646.85 {txt}{c |}
+71605. {c |} {res}23564.14 {txt}{c |}
+71606. {c |} {res} 21142.6 {txt}{c |}
+71607. {c |} {res}25009.16 {txt}{c |}
+71608. {c |} {res}26111.44 {txt}{c |}
+       {c LT}{hline 10}{c RT}
+71609. {c |} {res}28072.88 {txt}{c |}
+71610. {c |} {res}23394.45 {txt}{c |}
+71611. {c |} {res}25175.74 {txt}{c |}
+71612. {c |} {res}23507.58 {txt}{c |}
+71613. {c |} {res}23081.91 {txt}{c |}
+       {c LT}{hline 10}{c RT}
+71614. {c |} {res}21122.21 {txt}{c |}
+71615. {c |} {res}23089.79 {txt}{c |}
+71616. {c |} {res} 26025.7 {txt}{c |}
+71617. {c |} {res}22656.11 {txt}{c |}
+71618. {c |} {res}22255.96 {txt}{c |}
+       {c LT}{hline 10}{c RT}
+71619. {c |} {res}19393.27 {txt}{c |}
+71620. {c |} {res}21229.92 {txt}{c |}
+71621. {c |} {res}22038.39 {txt}{c |}
+71622. {c |} {res}21133.38 {txt}{c |}
+71623. {c |} {res}22287.89 {txt}{c |}
+       {c LT}{hline 10}{c RT}
+71624. {c |} {res}27125.59 {txt}{c |}
+71625. {c |} {res}24464.67 {txt}{c |}
+71626. {c |} {res}29945.72 {txt}{c |}
+71627. {c |} {res}29130.89 {txt}{c |}
+71628. {c |} {res}31161.35 {txt}{c |}
+       {c LT}{hline 10}{c RT}
+71629. {c |} {res}27258.39 {txt}{c |}
+71630. {c |} {res}23815.07 {txt}{c |}
+71631. {c |} {res}24922.35 {txt}{c |}
+71632. {c |} {res}25177.78 {txt}{c |}
+71633. {c |} {res}22135.12 {txt}{c |}
+       {c LT}{hline 10}{c RT}
+71634. {c |} {res}21782.69 {txt}{c |}
+71635. {c |} {res}19461.93 {txt}{c |}
+71636. {c |} {res}20145.59 {txt}{c |}
+71637. {c |} {res}21022.53 {txt}{c |}
+71638. {c |} {res}21188.07 {txt}{c |}
+       {c LT}{hline 10}{c RT}
+71639. {c |} {res} 19227.3 {txt}{c |}
+71640. {c |} {res}19136.15 {txt}{c |}
+71641. {c |} {res}20462.75 {txt}{c |}
+71642. {c |} {res}21448.26 {txt}{c |}
+71643. {c |} {res}22455.36 {txt}{c |}
+       {c LT}{hline 10}{c RT}
+71644. {c |} {res}26712.89 {txt}{c |}
+71645. {c |} {res}26105.52 {txt}{c |}
+71646. {c |} {res}35143.05 {txt}{c |}
+71647. {c |} {res}39841.79 {txt}{c |}
+71648. {c |} {res}38691.33 {txt}{c |}
+       {c LT}{hline 10}{c RT}
+71649. {c |} {res}36202.91 {txt}{c |}
+71650. {c |} {res}27849.54 {txt}{c |}
+71651. {c |} {res}31335.71 {txt}{c |}
+71652. {c |} {res}33280.18 {txt}{c |}
+71653. {c |} {res} 23805.5 {txt}{c |}
+       {c LT}{hline 10}{c RT}
+71654. {c |} {res}22234.66 {txt}{c |}
+71655. {c |} {res}22570.93 {txt}{c |}
+71656. {c |} {res}18204.34 {txt}{c |}
+71657. {c |} {res}19514.28 {txt}{c |}
+71658. {c |} {res}18947.83 {txt}{c |}
+       {c LT}{hline 10}{c RT}
+71659. {c |} {res} 18748.1 {txt}{c |}
+71660. {c |} {res}18844.79 {txt}{c |}
+71661. {c |} {res}   18669 {txt}{c |}
+71662. {c |} {res}20180.03 {txt}{c |}
+71663. {c |} {res}20762.34 {txt}{c |}
+       {c LT}{hline 10}{c RT}
+71664. {c |} {res}19940.92 {txt}{c |}
+71665. {c |} {res}24549.87 {txt}{c |}
+71666. {c |} {res}25962.26 {txt}{c |}
+71667. {c |} {res}40274.85 {txt}{c |}
+71668. {c |} {res}39054.53 {txt}{c |}
+       {c LT}{hline 10}{c RT}
+71669. {c |} {res}38225.38 {txt}{c |}
+71670. {c |} {res}29148.16 {txt}{c |}
+71671. {c |} {res}31084.09 {txt}{c |}
+71672. {c |} {res}31245.27 {txt}{c |}
+71673. {c |} {res}29569.72 {txt}{c |}
+       {c LT}{hline 10}{c RT}
+71674. {c |} {res}24701.25 {txt}{c |}
+71675. {c |} {res}20056.33 {txt}{c |}
+71676. {c |} {res}16977.69 {txt}{c |}
+71677. {c |} {res}16515.29 {txt}{c |}
+71678. {c |} {res}19195.36 {txt}{c |}
+       {c LT}{hline 10}{c RT}
+71679. {c |} {res}18661.06 {txt}{c |}
+71680. {c |} {res}15299.53 {txt}{c |}
+71681. {c |} {res}18046.35 {txt}{c |}
+71682. {c |} {res}19311.54 {txt}{c |}
+71683. {c |} {res}21215.27 {txt}{c |}
+       {c LT}{hline 10}{c RT}
+71684. {c |} {res}25840.39 {txt}{c |}
+71685. {c |} {res}29551.81 {txt}{c |}
+71686. {c |} {res}35716.09 {txt}{c |}
+71687. {c |} {res}29018.98 {txt}{c |}
+71688. {c |} {res} 19530.6 {txt}{c |}
+       {c LT}{hline 10}{c RT}
+71689. {c |} {res}25691.86 {txt}{c |}
+71690. {c |} {res}20453.01 {txt}{c |}
+71691. {c |} {res}19344.28 {txt}{c |}
+71692. {c |} {res}21586.04 {txt}{c |}
+71693. {c |} {res}23488.61 {txt}{c |}
+       {c LT}{hline 10}{c RT}
+71694. {c |} {res}30010.59 {txt}{c |}
+71695. {c |} {res}31228.51 {txt}{c |}
+71696. {c |} {res}31236.68 {txt}{c |}
+71697. {c |} {res}27807.07 {txt}{c |}
+71698. {c |} {res}16036.97 {txt}{c |}
+       {c LT}{hline 10}{c RT}
+71699. {c |} {res}26378.04 {txt}{c |}
+71700. {c |} {res}24352.37 {txt}{c |}
+71701. {c |} {res}24712.34 {txt}{c |}
+71702. {c |} {res}29481.58 {txt}{c |}
+71703. {c |} {res}32737.33 {txt}{c |}
+       {c LT}{hline 10}{c RT}
+71704. {c |} {res}41060.06 {txt}{c |}
+71705. {c |} {res}   43928 {txt}{c |}
+71706. {c |} {res}33735.43 {txt}{c |}
+71707. {c |} {res}30778.57 {txt}{c |}
+71708. {c |} {res}24668.83 {txt}{c |}
+       {c LT}{hline 10}{c RT}
+71709. {c |} {res}29484.73 {txt}{c |}
+71710. {c |} {res}25134.17 {txt}{c |}
+71711. {c |} {res} 20635.5 {txt}{c |}
+71712. {c |} {res}20563.52 {txt}{c |}
+71713. {c |} {res} 22244.4 {txt}{c |}
+       {c LT}{hline 10}{c RT}
+71714. {c |} {res}18161.66 {txt}{c |}
+71715. {c |} {res}41568.72 {txt}{c |}
+71716. {c |} {res}23705.75 {txt}{c |}
+71717. {c |} {res}22177.47 {txt}{c |}
+71718. {c |} {res}25847.74 {txt}{c |}
+       {c LT}{hline 10}{c RT}
+71719. {c |} {res}20265.84 {txt}{c |}
+71720. {c |} {res}23042.69 {txt}{c |}
+71721. {c |} {res}29277.24 {txt}{c |}
+71722. {c |} {res}27554.79 {txt}{c |}
+71723. {c |} {res}27362.15 {txt}{c |}
+       {c LT}{hline 10}{c RT}
+71724. {c |} {res}27223.73 {txt}{c |}
+71725. {c |} {res}28617.79 {txt}{c |}
+71726. {c |} {res}24970.85 {txt}{c |}
+71727. {c |} {res}25789.53 {txt}{c |}
+71728. {c |} {res}25814.15 {txt}{c |}
+       {c LT}{hline 10}{c RT}
+71729. {c |} {res}26114.37 {txt}{c |}
+71730. {c |} {res}26231.07 {txt}{c |}
+71731. {c |} {res}27697.75 {txt}{c |}
+71732. {c |} {res}26229.94 {txt}{c |}
+71733. {c |} {res} 26821.6 {txt}{c |}
+       {c LT}{hline 10}{c RT}
+71734. {c |} {res}28663.05 {txt}{c |}
+71735. {c |} {res}32220.64 {txt}{c |}
+71736. {c |} {res} 29315.6 {txt}{c |}
+71737. {c |} {res}27664.94 {txt}{c |}
+71738. {c |} {res}24275.67 {txt}{c |}
+       {c LT}{hline 10}{c RT}
+71739. {c |} {res}26145.58 {txt}{c |}
+71740. {c |} {res}28087.27 {txt}{c |}
+71741. {c |} {res}27104.01 {txt}{c |}
+71742. {c |} {res}29773.25 {txt}{c |}
+71743. {c |} {res}33661.51 {txt}{c |}
+       {c LT}{hline 10}{c RT}
+71744. {c |} {res}44842.71 {txt}{c |}
+71745. {c |} {res}30715.33 {txt}{c |}
+71746. {c |} {res}27562.35 {txt}{c |}
+71747. {c |} {res}35414.05 {txt}{c |}
+71748. {c |} {res}25945.22 {txt}{c |}
+       {c LT}{hline 10}{c RT}
+71749. {c |} {res}27984.01 {txt}{c |}
+71750. {c |} {res}26767.37 {txt}{c |}
+71751. {c |} {res}33928.54 {txt}{c |}
+71752. {c |} {res}32771.76 {txt}{c |}
+71753. {c |} {res}31793.61 {txt}{c |}
+       {c LT}{hline 10}{c RT}
+71754. {c |} {res} 34767.7 {txt}{c |}
+71755. {c |} {res}31716.96 {txt}{c |}
+71756. {c |} {res}29507.86 {txt}{c |}
+71757. {c |} {res}30530.29 {txt}{c |}
+71758. {c |} {res}43915.27 {txt}{c |}
+       {c LT}{hline 10}{c RT}
+71759. {c |} {res}35824.37 {txt}{c |}
+71760. {c |} {res}35949.14 {txt}{c |}
+71761. {c |} {res}33273.82 {txt}{c |}
+71762. {c |} {res}27425.54 {txt}{c |}
+71763. {c |} {res}30657.58 {txt}{c |}
+       {c LT}{hline 10}{c RT}
+71764. {c |} {res} 38095.8 {txt}{c |}
+71765. {c |} {res} 34255.7 {txt}{c |}
+71766. {c |} {res}32477.12 {txt}{c |}
+71767. {c |} {res}30308.74 {txt}{c |}
+71768. {c |} {res} 30953.5 {txt}{c |}
+       {c LT}{hline 10}{c RT}
+71769. {c |} {res}29829.48 {txt}{c |}
+71770. {c |} {res}27313.52 {txt}{c |}
+71771. {c |} {res}37914.75 {txt}{c |}
+71772. {c |} {res}40185.83 {txt}{c |}
+71773. {c |} {res}32166.45 {txt}{c |}
+       {c LT}{hline 10}{c RT}
+71774. {c |} {res}32293.72 {txt}{c |}
+71775. {c |} {res}30478.05 {txt}{c |}
+71776. {c |} {res}31725.45 {txt}{c |}
+71777. {c |} {res}44886.24 {txt}{c |}
+71778. {c |} {res}35430.17 {txt}{c |}
+       {c LT}{hline 10}{c RT}
+71779. {c |} {res} 32247.7 {txt}{c |}
+71780. {c |} {res}32021.58 {txt}{c |}
+71781. {c |} {res}51882.66 {txt}{c |}
+71782. {c |} {res} 46694.3 {txt}{c |}
+71783. {c |} {res}48454.23 {txt}{c |}
+       {c LT}{hline 10}{c RT}
+71784. {c |} {res}49734.91 {txt}{c |}
+71785. {c |} {res}33477.03 {txt}{c |}
+71786. {c |} {res}   38751 {txt}{c |}
+71787. {c |} {res}39922.41 {txt}{c |}
+71788. {c |} {res}37042.52 {txt}{c |}
+       {c LT}{hline 10}{c RT}
+71789. {c |} {res}38175.59 {txt}{c |}
+71790. {c |} {res}32694.26 {txt}{c |}
+71791. {c |} {res} 40367.2 {txt}{c |}
+71792. {c |} {res}49225.46 {txt}{c |}
+71793. {c |} {res}44318.36 {txt}{c |}
+       {c LT}{hline 10}{c RT}
+71794. {c |} {res}50019.89 {txt}{c |}
+71795. {c |} {res}36705.78 {txt}{c |}
+71796. {c |} {res}47641.56 {txt}{c |}
+71797. {c |} {res}38835.31 {txt}{c |}
+71798. {c |} {res}45123.49 {txt}{c |}
+       {c LT}{hline 10}{c RT}
+71799. {c |} {res}43743.76 {txt}{c |}
+71800. {c |} {res}39670.92 {txt}{c |}
+71801. {c |} {res}44833.85 {txt}{c |}
+71802. {c |} {res}40870.27 {txt}{c |}
+71803. {c |} {res}38163.38 {txt}{c |}
+       {c LT}{hline 10}{c RT}
+71804. {c |} {res}39884.11 {txt}{c |}
+71805. {c |} {res}43410.66 {txt}{c |}
+71806. {c |} {res}39236.51 {txt}{c |}
+71807. {c |} {res}40523.77 {txt}{c |}
+71808. {c |} {res}39162.07 {txt}{c |}
+       {c LT}{hline 10}{c RT}
+71809. {c |} {res}31202.31 {txt}{c |}
+71810. {c |} {res}25135.45 {txt}{c |}
+71811. {c |} {res}   31294 {txt}{c |}
+71812. {c |} {res}29638.24 {txt}{c |}
+71813. {c |} {res}34792.38 {txt}{c |}
+       {c LT}{hline 10}{c RT}
+71814. {c |} {res}27415.79 {txt}{c |}
+71815. {c |} {res}30290.85 {txt}{c |}
+71816. {c |} {res}45851.21 {txt}{c |}
+71817. {c |} {res}31824.07 {txt}{c |}
+71818. {c |} {res}34633.08 {txt}{c |}
+       {c LT}{hline 10}{c RT}
+71819. {c |} {res}32166.08 {txt}{c |}
+71820. {c |} {res}36470.52 {txt}{c |}
+71821. {c |} {res}36884.26 {txt}{c |}
+71822. {c |} {res}41068.64 {txt}{c |}
+71823. {c |} {res}32214.39 {txt}{c |}
+       {c LT}{hline 10}{c RT}
+71824. {c |} {res}33788.14 {txt}{c |}
+71825. {c |} {res}38168.66 {txt}{c |}
+71826. {c |} {res}46395.52 {txt}{c |}
+71827. {c |} {res}30037.72 {txt}{c |}
+71828. {c |} {res}44268.52 {txt}{c |}
+       {c LT}{hline 10}{c RT}
+71829. {c |} {res}36716.01 {txt}{c |}
+71830. {c |} {res}38387.92 {txt}{c |}
+71831. {c |} {res}35859.85 {txt}{c |}
+71832. {c |} {res}43405.39 {txt}{c |}
+71833. {c |} {res}48239.83 {txt}{c |}
+       {c LT}{hline 10}{c RT}
+71834. {c |} {res}34414.86 {txt}{c |}
+71835. {c |} {res}36893.29 {txt}{c |}
+71836. {c |} {res}38566.14 {txt}{c |}
+71837. {c |} {res} 37114.3 {txt}{c |}
+71838. {c |} {res}40638.95 {txt}{c |}
+       {c LT}{hline 10}{c RT}
+71839. {c |} {res}42497.16 {txt}{c |}
+71840. {c |} {res}39640.25 {txt}{c |}
+71841. {c |} {res}39301.85 {txt}{c |}
+71842. {c |} {res}36403.07 {txt}{c |}
+71843. {c |} {res}39533.12 {txt}{c |}
+       {c LT}{hline 10}{c RT}
+71844. {c |} {res}32454.77 {txt}{c |}
+71845. {c |} {res}39708.88 {txt}{c |}
+71846. {c |} {res}36492.44 {txt}{c |}
+71847. {c |} {res}35099.64 {txt}{c |}
+71848. {c |} {res}38023.46 {txt}{c |}
+       {c LT}{hline 10}{c RT}
+71849. {c |} {res}41847.07 {txt}{c |}
+71850. {c |} {res}37146.49 {txt}{c |}
+71851. {c |} {res}37033.34 {txt}{c |}
+71852. {c |} {res}32597.03 {txt}{c |}
+71853. {c |} {res}29659.79 {txt}{c |}
+       {c LT}{hline 10}{c RT}
+71854. {c |} {res}43998.46 {txt}{c |}
+71855. {c |} {res}32837.31 {txt}{c |}
+71856. {c |} {res}33958.26 {txt}{c |}
+71857. {c |} {res}32448.92 {txt}{c |}
+71858. {c |} {res}32209.09 {txt}{c |}
+       {c LT}{hline 10}{c RT}
+71859. {c |} {res}31568.31 {txt}{c |}
+71860. {c |} {res}30149.49 {txt}{c |}
+71861. {c |} {res}34437.61 {txt}{c |}
+71862. {c |} {res}30827.59 {txt}{c |}
+71863. {c |} {res}30682.36 {txt}{c |}
+       {c LT}{hline 10}{c RT}
+71864. {c |} {res}38828.01 {txt}{c |}
+71865. {c |} {res}41521.73 {txt}{c |}
+71866. {c |} {res}17253.66 {txt}{c |}
+71867. {c |} {res}18911.52 {txt}{c |}
+71868. {c |} {res}18691.39 {txt}{c |}
+       {c LT}{hline 10}{c RT}
+71869. {c |} {res}21001.31 {txt}{c |}
+71870. {c |} {res}20342.09 {txt}{c |}
+71871. {c |} {res}22182.69 {txt}{c |}
+71872. {c |} {res}19532.18 {txt}{c |}
+71873. {c |} {res}23087.95 {txt}{c |}
+       {c LT}{hline 10}{c RT}
+71874. {c |} {res}22621.21 {txt}{c |}
+71875. {c |} {res}21081.35 {txt}{c |}
+71876. {c |} {res}35705.54 {txt}{c |}
+71877. {c |} {res}27863.15 {txt}{c |}
+71878. {c |} {res}25994.48 {txt}{c |}
+       {c LT}{hline 10}{c RT}
+71879. {c |} {res}27805.11 {txt}{c |}
+71880. {c |} {res}41300.49 {txt}{c |}
+71881. {c |} {res}31699.47 {txt}{c |}
+71882. {c |} {res}40823.77 {txt}{c |}
+71883. {c |} {res}35571.32 {txt}{c |}
+       {c LT}{hline 10}{c RT}
+71884. {c |} {res}42805.34 {txt}{c |}
+       {c BLC}{hline 10}{c BRC}
+
+{com}. 
+. * Note: Though one metric alone was sufficient,
+
+. * I will begin the first section of the assignment considering upward mobility 
+
+. * using both income and rank measurements in this code, to consider multiple 
+
+. * methods of interpretation.
+
+. 
+. *** Question 3 ***
+
+. 
+. sum kfr_pooled_p25 if state==54 & county == 039 & tract == 011302 
+
+{txt}    Variable {c |}        Obs        Mean    Std. Dev.       Min        Max
+{hline 13}{c +}{hline 57}
+kfr_poole~25 {c |}{res}          1    31622.39           .   31622.39   31622.39
+
+{com}. sum kfr_pooled_p25 if state==54 [aw = count_pooled ]
+
+{txt}    Variable {c |}     Obs      Weight        Mean   Std. Dev.       Min        Max
+{hline 13}{c +}{hline 65}
+kfr_poole~25 {c |}{res}     483      402347    32073.12   4033.231   19898.99   51185.72
+
+{com}. sum kfr_pooled_p25 [aw = count_pooled ]
+
+{txt}    Variable {c |}     Obs      Weight        Mean   Std. Dev.       Min        Max
+{hline 13}{c +}{hline 65}
+kfr_poole~25 {c |}{res}  71,923    72229071    34311.68   7899.586          0   105732.4
+
+{com}. 
+. sum ranks_pooled_p25 if state==54 & county == 039 & tract == 011302 
+
+{txt}    Variable {c |}        Obs        Mean    Std. Dev.       Min        Max
+{hline 13}{c +}{hline 57}
+ranks_poo~25 {c |}{res}          1    .4056647           .   .4056647   .4056647
+
+{com}. sum ranks_pooled_p25 if state==54 [aw = count_pooled ]
+
+{txt}    Variable {c |}     Obs      Weight        Mean   Std. Dev.       Min        Max
+{hline 13}{c +}{hline 65}
+ranks_poo~25 {c |}{res}     483      402347    .4092361   .0369768   .2935795   .5675471
+
+{com}. sum ranks_pooled_p25 [aw = count_pooled ]
+
+{txt}    Variable {c |}     Obs      Weight        Mean   Std. Dev.       Min        Max
+{hline 13}{c +}{hline 65}
+ranks_poo~25 {c |}{res}  71,925    72229817    .4276028   .0691659   .0384654   1.033489
+
+{com}. 
+. *** Queston 4 ***
+
+. 
+. * Comparing Kanawha County, WV, and the U.S. by income metric
+
+. 
+. sum kfr_pooled_p25 if state==54 & county == 039 [aw = count_pooled ]
+
+{txt}    Variable {c |}     Obs      Weight        Mean   Std. Dev.       Min        Max
+{hline 13}{c +}{hline 65}
+kfr_poole~25 {c |}{res}      53       42637    29833.93   3765.803   19898.99   43895.08
+
+{com}. sum kfr_pooled_p25 if state==54 [aw = count_pooled ]
+
+{txt}    Variable {c |}     Obs      Weight        Mean   Std. Dev.       Min        Max
+{hline 13}{c +}{hline 65}
+kfr_poole~25 {c |}{res}     483      402347    32073.12   4033.231   19898.99   51185.72
+
+{com}. sum kfr_pooled_p25 [aw = count_pooled ]
+
+{txt}    Variable {c |}     Obs      Weight        Mean   Std. Dev.       Min        Max
+{hline 13}{c +}{hline 65}
+kfr_poole~25 {c |}{res}  71,923    72229071    34311.68   7899.586          0   105732.4
+
+{com}. 
+. 
+. * Comparing Kanawha County, WV, and the U.S. by rank metric
+
+. 
+. sum ranks_pooled_p25 if state==54 & county == 039 [aw = count_pooled ]
+
+{txt}    Variable {c |}     Obs      Weight        Mean   Std. Dev.       Min        Max
+{hline 13}{c +}{hline 65}
+ranks_poo~25 {c |}{res}      53       42637    .3884272   .0348573   .2935795   .5127614
+
+{com}. sum ranks_pooled_p25 if state==54 [aw = count_pooled ]
+
+{txt}    Variable {c |}     Obs      Weight        Mean   Std. Dev.       Min        Max
+{hline 13}{c +}{hline 65}
+ranks_poo~25 {c |}{res}     483      402347    .4092361   .0369768   .2935795   .5675471
+
+{com}. sum ranks_pooled_p25 [aw = count_pooled ]
+
+{txt}    Variable {c |}     Obs      Weight        Mean   Std. Dev.       Min        Max
+{hline 13}{c +}{hline 65}
+ranks_poo~25 {c |}{res}  71,925    72229817    .4276028   .0691659   .0384654   1.033489
+
+{com}. 
+. *** Question 5 ***
+
+. 
+. ** Looking at children who start with parents at the 75th percentile.
+
+. * Repeating Questions 3:
+
+. 
+. sum kfr_pooled_p75 if state==54 & county == 039 & tract == 011302 
+
+{txt}    Variable {c |}        Obs        Mean    Std. Dev.       Min        Max
+{hline 13}{c +}{hline 57}
+kfr_poole~75 {c |}{res}          1    55564.61           .   55564.61   55564.61
+
+{com}. sum kfr_pooled_p75 if state==54 [aw = count_pooled ]
+
+{txt}    Variable {c |}     Obs      Weight        Mean   Std. Dev.       Min        Max
+{hline 13}{c +}{hline 65}
+kfr_poole~75 {c |}{res}     483      402347    53359.17   7080.243   26740.11   91418.86
+
+{com}. sum kfr_pooled_p75 [aw = count_pooled ]
+
+{txt}    Variable {c |}     Obs      Weight        Mean   Std. Dev.       Min        Max
+{hline 13}{c +}{hline 65}
+kfr_poole~75 {c |}{res}  71,925    72229817    51284.03   9326.094   156.9863     137454
+
+{com}. 
+. 
+. sum ranks_pooled_p75 if state==54 & county == 039 & tract == 011302 
+
+{txt}    Variable {c |}        Obs        Mean    Std. Dev.       Min        Max
+{hline 13}{c +}{hline 57}
+ranks_poo~75 {c |}{res}          1    .5972984           .   .5972984   .5972984
+
+{com}. sum ranks_pooled_p75 if state==54 [aw = count_pooled ]
+
+{txt}    Variable {c |}     Obs      Weight        Mean   Std. Dev.       Min        Max
+{hline 13}{c +}{hline 65}
+ranks_poo~75 {c |}{res}     483      402347    .5798733   .0483154   .3593999   .7855357
+
+{com}. sum ranks_pooled_p75 [aw = count_pooled ]
+
+{txt}    Variable {c |}     Obs      Weight        Mean   Std. Dev.       Min        Max
+{hline 13}{c +}{hline 65}
+ranks_poo~75 {c |}{res}  71,925    72229817     .563232   .0683908   .1066069    .909413
+
+{com}. 
+. * Repeating Question 4:
+
+. 
+. sum kfr_pooled_p75 if state==54 & county == 039 [aw = count_pooled ]
+
+{txt}    Variable {c |}     Obs      Weight        Mean   Std. Dev.       Min        Max
+{hline 13}{c +}{hline 65}
+kfr_poole~75 {c |}{res}      53       42637    49479.02    4919.61   28199.92    59864.3
+
+{com}. sum kfr_pooled_p75 if state==54 [aw = count_pooled ]
+
+{txt}    Variable {c |}     Obs      Weight        Mean   Std. Dev.       Min        Max
+{hline 13}{c +}{hline 65}
+kfr_poole~75 {c |}{res}     483      402347    53359.17   7080.243   26740.11   91418.86
+
+{com}. sum kfr_pooled_p75 [aw = count_pooled ]
+
+{txt}    Variable {c |}     Obs      Weight        Mean   Std. Dev.       Min        Max
+{hline 13}{c +}{hline 65}
+kfr_poole~75 {c |}{res}  71,925    72229817    51284.03   9326.094   156.9863     137454
+
+{com}. 
+. 
+. sum ranks_pooled_p75 if state==54 & county == 039 [aw = count_pooled ]
+
+{txt}    Variable {c |}     Obs      Weight        Mean   Std. Dev.       Min        Max
+{hline 13}{c +}{hline 65}
+ranks_poo~75 {c |}{res}      53       42637    .5538631   .0377258   .3733364   .6245214
+
+{com}. sum ranks_pooled_p75 if state==54 [aw = count_pooled ]
+
+{txt}    Variable {c |}     Obs      Weight        Mean   Std. Dev.       Min        Max
+{hline 13}{c +}{hline 65}
+ranks_poo~75 {c |}{res}     483      402347    .5798733   .0483154   .3593999   .7855357
+
+{com}. sum ranks_pooled_p75 [aw = count_pooled ]
+
+{txt}    Variable {c |}     Obs      Weight        Mean   Std. Dev.       Min        Max
+{hline 13}{c +}{hline 65}
+ranks_poo~75 {c |}{res}  71,925    72229817     .563232   .0683908   .1066069    .909413
+
+{com}. 
+. ** Looking at children who start with parents at the 100th percentile.
+
+. 
+. * Repeating Questions 3:
+
+. 
+. sum kfr_pooled_p100 if state==54 & county == 039 & tract == 011302 
+
+{txt}    Variable {c |}        Obs        Mean    Std. Dev.       Min        Max
+{hline 13}{c +}{hline 57}
+kfr_pool~100 {c |}{res}          1     82887.8           .    82887.8    82887.8
+
+{com}. sum kfr_pooled_p100 if state==54 [aw = count_pooled ]
+
+{txt}    Variable {c |}     Obs      Weight        Mean   Std. Dev.       Min        Max
+{hline 13}{c +}{hline 65}
+kfr_pool~100 {c |}{res}     481      401653    77824.96   19081.54   27569.82   294914.7
+
+{com}. sum kfr_pooled_p100 [aw = count_pooled ]
+
+{txt}    Variable {c |}     Obs      Weight        Mean   Std. Dev.       Min        Max
+{hline 13}{c +}{hline 65}
+kfr_pool~100 {c |}{res}  71,886    72215136    69218.15   16362.81          0     980579
+
+{com}. 
+. 
+. sum ranks_pooled_p100 if state==54 & county == 039 & tract == 011302 
+
+{txt}    Variable {c |}        Obs        Mean    Std. Dev.       Min        Max
+{hline 13}{c +}{hline 57}
+ranks_po~100 {c |}{res}          1    .7479782           .   .7479782   .7479782
+
+{com}. sum ranks_pooled_p100 if state==54 [aw = count_pooled ]
+
+{txt}    Variable {c |}     Obs      Weight        Mean   Std. Dev.       Min        Max
+{hline 13}{c +}{hline 65}
+ranks_po~100 {c |}{res}     483      402347    .7140437    .077253   .3673249   1.071122
+
+{com}. sum ranks_pooled_p100 [aw = count_pooled ]
+
+{txt}    Variable {c |}     Obs      Weight        Mean   Std. Dev.       Min        Max
+{hline 13}{c +}{hline 65}
+ranks_po~100 {c |}{res}  71,925    72229817     .669876   .0880753  -.1247524   1.291497
+
+{com}. 
+. * Repeating Question 4:
+
+. 
+. sum kfr_pooled_p100 if state==54 & county == 039 [aw = count_pooled ]
+
+{txt}    Variable {c |}     Obs      Weight        Mean   Std. Dev.       Min        Max
+{hline 13}{c +}{hline 65}
+kfr_pool~100 {c |}{res}      53       42637    70849.11   10290.78   34923.34   98670.27
+
+{com}. sum kfr_pooled_p100 if state==54 [aw = count_pooled ]
+
+{txt}    Variable {c |}     Obs      Weight        Mean   Std. Dev.       Min        Max
+{hline 13}{c +}{hline 65}
+kfr_pool~100 {c |}{res}     481      401653    77824.96   19081.54   27569.82   294914.7
+
+{com}. sum kfr_pooled_p100 [aw = count_pooled ]
+
+{txt}    Variable {c |}     Obs      Weight        Mean   Std. Dev.       Min        Max
+{hline 13}{c +}{hline 65}
+kfr_pool~100 {c |}{res}  71,886    72215136    69218.15   16362.81          0     980579
+
+{com}. 
+. 
+. sum ranks_pooled_p100 if state==54 & county == 039 [aw = count_pooled ]
+
+{txt}    Variable {c |}     Obs      Weight        Mean   Std. Dev.       Min        Max
+{hline 13}{c +}{hline 65}
+ranks_po~100 {c |}{res}      53       42637    .6839437   .0584111   .4360484   .8137128
+
+{com}. sum ranks_pooled_p100 if state==54 [aw = count_pooled ]
+
+{txt}    Variable {c |}     Obs      Weight        Mean   Std. Dev.       Min        Max
+{hline 13}{c +}{hline 65}
+ranks_po~100 {c |}{res}     483      402347    .7140437    .077253   .3673249   1.071122
+
+{com}. sum ranks_pooled_p100 [aw = count_pooled ]
+
+{txt}    Variable {c |}     Obs      Weight        Mean   Std. Dev.       Min        Max
+{hline 13}{c +}{hline 65}
+ranks_po~100 {c |}{res}  71,925    72229817     .669876   .0880753  -.1247524   1.291497
+
+{com}. 
+. *** Question 6 ***
+
+. sum kfr_pooled_p25 if state == 54 & county == 039
+
+{txt}    Variable {c |}        Obs        Mean    Std. Dev.       Min        Max
+{hline 13}{c +}{hline 57}
+kfr_poole~25 {c |}{res}         53    29244.33    4165.087   19898.99   43895.08
+
+{com}. gen kfr_pooled_p25_std = (kfr_pooled_p25 - r(mean))/r(sd)
+{txt}(1,267 missing values generated)
+
+{com}. sum kfr_pooled_p75 if state == 54 & county == 039
+
+{txt}    Variable {c |}        Obs        Mean    Std. Dev.       Min        Max
+{hline 13}{c +}{hline 57}
+kfr_poole~75 {c |}{res}         53    48601.72    6039.629   28199.92    59864.3
+
+{com}. gen kfr_pooled_p75_std = (kfr_pooled_p75 - r(mean))/r(sd)
+{txt}(1,266 missing values generated)
+
+{com}. reg kfr_pooled_p25 kfr_pooled_p75_std if state==54 & county == 039, robust
+
+{txt}Linear regression                               Number of obs     = {res}        53
+                                                {txt}F(1, 51)          =  {res}    17.36
+                                                {txt}Prob > F          = {res}    0.0001
+                                                {txt}R-squared         = {res}    0.3082
+                                                {txt}Root MSE          =    {res} 3498.1
+
+{txt}{hline 19}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 20}{c |}{col 32}    Robust
+{col 1}    kfr_pooled_p25{col 20}{c |}      Coef.{col 32}   Std. Err.{col 44}      t{col 52}   P>|t|{col 60}     [95% Con{col 73}f. Interval]
+{hline 19}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+kfr_pooled_p75_std {c |}{col 20}{res}{space 2} 2312.267{col 32}{space 2} 555.0109{col 43}{space 1}    4.17{col 52}{space 3}0.000{col 60}{space 4} 1198.037{col 73}{space 3} 3426.498
+{txt}{space 13}_cons {c |}{col 20}{res}{space 2} 29244.33{col 32}{space 2} 480.5007{col 43}{space 1}   60.86{col 52}{space 3}0.000{col 60}{space 4} 28279.68{col 73}{space 3} 30208.98
+{txt}{hline 19}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}
+{com}. twoway (scatter kfr_pooled_p25_std kfr_pooled_p75_std if state==54 & county == 039) || lfitci kfr_pooled_p25_std kfr_pooled_p75_std if state==54 & county == 039
+{res}
+{com}. 
+. 
+. sum ranks_pooled_p25 if state == 54 & county == 039
+
+{txt}    Variable {c |}        Obs        Mean    Std. Dev.       Min        Max
+{hline 13}{c +}{hline 57}
+ranks_poo~25 {c |}{res}         53    .3828007    .0387415   .2935795   .5127614
+
+{com}. gen ranks_pooled_p25_std = (ranks_pooled_p25 - r(mean))/r(sd)
+{txt}(1,264 missing values generated)
+
+{com}. sum ranks_pooled_p75 if state == 54 & county == 039
+
+{txt}    Variable {c |}        Obs        Mean    Std. Dev.       Min        Max
+{hline 13}{c +}{hline 57}
+ranks_poo~75 {c |}{res}         53     .546694    .0473736   .3733364   .6245214
+
+{com}. gen ranks_pooled_p75_std = (ranks_pooled_p75 - r(mean))/r(sd)
+{txt}(1,264 missing values generated)
+
+{com}. reg ranks_pooled_p25 ranks_pooled_p75_std if state==54 & county == 039, robust
+
+{txt}Linear regression                               Number of obs     = {res}        53
+                                                {txt}F(1, 51)          =  {res}    22.42
+                                                {txt}Prob > F          = {res}    0.0000
+                                                {txt}R-squared         = {res}    0.3166
+                                                {txt}Root MSE          =    {res} .03234
+
+{txt}{hline 21}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 22}{c |}{col 34}    Robust
+{col 1}    ranks_pooled_p25{col 22}{c |}      Coef.{col 34}   Std. Err.{col 46}      t{col 54}   P>|t|{col 62}     [95% Con{col 75}f. Interval]
+{hline 21}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+ranks_pooled_p75_std {c |}{col 22}{res}{space 2} .0217997{col 34}{space 2} .0046035{col 45}{space 1}    4.74{col 54}{space 3}0.000{col 62}{space 4} .0125578{col 75}{space 3} .0310417
+{txt}{space 15}_cons {c |}{col 22}{res}{space 2} .3828007{col 34}{space 2} .0044421{col 45}{space 1}   86.18{col 54}{space 3}0.000{col 62}{space 4} .3738829{col 75}{space 3} .3917184
+{txt}{hline 21}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}
+{com}. twoway (scatter ranks_pooled_p25_std ranks_pooled_p75_std if state==54 & county == 039) || lfitci ranks_pooled_p25_std ranks_pooled_p75_std if state==54 & county == 039
+{res}
+{com}. 
+. *** Question 7 ***
+
+. 
+. * From this point, we will restrict our analysis to just using the income metric, for simplicity now that
+
+. * the usefullness of the rank metric has been explored.
+
+. 
+. * Repeating Question 3 for all races, looking at children who start with parents at the 25th percentile.
+
+. sum kfr_*_p25 if state==54 & county == 039 & tract == 011302 
+
+{txt}    Variable {c |}        Obs        Mean    Std. Dev.       Min        Max
+{hline 13}{c +}{hline 57}
+kfr_natam~25 {c |}{res}          0
+{txt}kfr_asian~25 {c |}{res}          0
+{txt}kfr_black~25 {c |}{res}          0
+{txt}kfr_hisp_p25 {c |}{res}          0
+{txt}kfr_poole~25 {c |}{res}          1    31622.39           .   31622.39   31622.39
+{txt}{hline 13}{c +}{hline 57}
+kfr_white~25 {c |}{res}          1    33268.43           .   33268.43   33268.43
+
+{com}. sum kfr_*_p25 if state==54 [aw = count_pooled ]
+
+{txt}    Variable {c |}     Obs      Weight        Mean   Std. Dev.       Min        Max
+{hline 13}{c +}{hline 65}
+kfr_natam~25 {c |}{res}       0           0
+{txt}kfr_asian~25 {c |}{res}       4        2458    72281.26   60252.77   29787.15   143112.7
+{txt}kfr_black~25 {c |}{res}      87       74119       22992   4858.418   9777.684   34336.66
+{txt}kfr_hisp_p25 {c |}{res}       3        4086    23623.68   7544.997   18570.45   33812.34
+{txt}kfr_poole~25 {c |}{res}     483      402347    32073.12   4033.231   19898.99   51185.72
+{txt}{hline 13}{c +}{hline 65}
+kfr_white~25 {c |}{res}     482      402295    33532.87   4048.807   19725.26   58545.78
+
+{com}. sum kfr_*_p25 [aw = count_pooled ]
+
+{txt}    Variable {c |}     Obs      Weight        Mean   Std. Dev.       Min        Max
+{hline 13}{c +}{hline 65}
+kfr_natam~25 {c |}{res}   1,729     1983248    25158.45   10027.46          0   99456.34
+{txt}kfr_asian~25 {c |}{res}  15,433    19048940    54543.44   21288.65          0   928096.9
+{txt}kfr_black~25 {c |}{res}  34,076    37606254    25010.05   8438.839          0   820195.1
+{txt}kfr_hisp_p25 {c |}{res}  37,607    43176626    35543.45   10588.92          0   750879.7
+{txt}kfr_poole~25 {c |}{res}  71,923    72229071    34311.68   7899.586          0   105732.4
+{txt}{hline 13}{c +}{hline 65}
+kfr_white~25 {c |}{res}  67,961    68418375    38180.12   8322.362          0   244492.2
+
+{com}. 
+. 
+. * Repeating Question 4 for all races, looking at children who start with parents at the 75th percentile.
+
+. sum kfr_*_p75 if state==54 & county == 039 [aw = count_pooled ]
+
+{txt}    Variable {c |}     Obs      Weight        Mean   Std. Dev.       Min        Max
+{hline 13}{c +}{hline 65}
+kfr_natam~75 {c |}{res}       0           0
+{txt}kfr_asian~75 {c |}{res}       2        1505    74694.42   36403.75    44849.6   96896.48
+{txt}kfr_black~75 {c |}{res}      28       21933    33556.32   11896.73   16.28898    68363.5
+{txt}kfr_hisp_p75 {c |}{res}       0           0
+{txt}kfr_poole~75 {c |}{res}      53       42637    49479.02    4919.61   28199.92    59864.3
+{txt}{hline 13}{c +}{hline 65}
+kfr_white~75 {c |}{res}      53       42637    51214.27    4842.42   27247.46   60490.97
+
+{com}. sum kfr_*_p75 if state==54 [aw = count_pooled ]
+
+{txt}    Variable {c |}     Obs      Weight        Mean   Std. Dev.       Min        Max
+{hline 13}{c +}{hline 65}
+kfr_natam~75 {c |}{res}       0           0
+{txt}kfr_asian~75 {c |}{res}       4        2458    66605.04    26320.9    44849.6   96896.48
+{txt}kfr_black~75 {c |}{res}      87       74119    34295.06   12583.96          0   76664.28
+{txt}kfr_hisp_p75 {c |}{res}       3        4086    48528.81   7360.633   38291.45   52379.72
+{txt}kfr_poole~75 {c |}{res}     483      402347    53359.17   7080.243   26740.11   91418.86
+{txt}{hline 13}{c +}{hline 65}
+kfr_white~75 {c |}{res}     482      402295    54650.89   7281.724   27247.46    97220.3
+
+{com}. sum kfr_*_p75 [aw = count_pooled ]
+
+{txt}    Variable {c |}     Obs      Weight        Mean   Std. Dev.       Min        Max
+{hline 13}{c +}{hline 65}
+kfr_natam~75 {c |}{res}   1,724     1975804     40962.5   20516.92          0   253800.3
+{txt}kfr_asian~75 {c |}{res}  15,358    18966663    64209.17   28072.02          0    1049626
+{txt}kfr_black~75 {c |}{res}  34,039    37569123    36242.48   12275.08          0   625845.3
+{txt}kfr_hisp_p75 {c |}{res}  37,575    43148764    48115.53   14483.29          0   899128.1
+{txt}kfr_poole~75 {c |}{res}  71,925    72229817    51284.03   9326.094   156.9863     137454
+{txt}{hline 13}{c +}{hline 65}
+kfr_white~75 {c |}{res}  67,951    68403551    54909.41   10279.91          0   849669.2
+
+{com}. 
+. *Repeating Question 4 for all races, looking at children who start with parents at the 100th percentile.
+
+. sum kfr_*_p100 if state==54 & county == 039 [aw = count_pooled ]
+
+{txt}    Variable {c |}     Obs      Weight        Mean   Std. Dev.       Min        Max
+{hline 13}{c +}{hline 65}
+kfr_nata~100 {c |}{res}       0           0
+{txt}kfr_asia~100 {c |}{res}       2        1505    59517.45   2298.747   57632.87   60919.41
+{txt}kfr_blac~100 {c |}{res}      26       21177    57222.46   38472.31    220.274   212877.2
+{txt}kfr_hisp~100 {c |}{res}       0           0
+{txt}kfr_pool~100 {c |}{res}      53       42637    70849.11   10290.78   34923.34   98670.27
+{txt}{hline 13}{c +}{hline 65}
+kfr_whit~100 {c |}{res}      53       42637     74520.7   10776.33   31398.63   119610.4
+
+{com}. sum kfr_*_p100 if state==54 [aw = count_pooled ]
+
+{txt}    Variable {c |}     Obs      Weight        Mean   Std. Dev.       Min        Max
+{hline 13}{c +}{hline 65}
+kfr_nata~100 {c |}{res}       0           0
+{txt}kfr_asia~100 {c |}{res}       4        2458    123139.6   131361.9   57632.87   344477.9
+{txt}kfr_blac~100 {c |}{res}      81       70580    62734.86   87105.02   88.45776   870279.6
+{txt}kfr_hisp~100 {c |}{res}       3        4086    102632.6   43930.92    43551.6     132532
+{txt}kfr_pool~100 {c |}{res}     481      401653    77824.96   19081.54   27569.82   294914.7
+{txt}{hline 13}{c +}{hline 65}
+kfr_whit~100 {c |}{res}     478      400541    80897.51   19452.08   29799.27   242881.6
+
+{com}. sum kfr_*_p100 [aw = count_pooled ]
+
+{txt}    Variable {c |}     Obs      Weight        Mean   Std. Dev.       Min        Max
+{hline 13}{c +}{hline 65}
+kfr_nata~100 {c |}{res}   1,590     1839414    63708.02   64873.78          0     971525
+{txt}kfr_asia~100 {c |}{res}  13,478    16708669    88053.47   82900.62          0    1052856
+{txt}kfr_blac~100 {c |}{res}  32,527    36085842    57715.74   47865.77          0    1056306
+{txt}kfr_hisp~100 {c |}{res}  35,983    41577962    69306.79    51415.1          0    1058222
+{txt}kfr_pool~100 {c |}{res}  71,886    72215136    69218.15   16362.81          0     980579
+{txt}{hline 13}{c +}{hline 65}
+kfr_whit~100 {c |}{res}  67,610    68050656    74467.66   23742.27          0    1047303
+
+{com}. 
+. *** Question 8 ***
+
+. * Here we will test familiar covariates mentioned in the Opportunity Atlas Manuscript
+
+. *Covariate: Job Density in 201324
+
+. sum kfr_pooled_p25 if state == 54 & county == 039 
+
+{txt}    Variable {c |}        Obs        Mean    Std. Dev.       Min        Max
+{hline 13}{c +}{hline 57}
+kfr_poole~25 {c |}{res}         53    29244.33    4165.087   19898.99   43895.08
+
+{com}. gen y_std2 = (kfr_pooled_p25 - r(mean))/r(sd)
+{txt}(1,267 missing values generated)
+
+{com}. sum job_density_2013 if state == 54 & county == 039
+
+{txt}    Variable {c |}        Obs        Mean    Std. Dev.       Min        Max
+{hline 13}{c +}{hline 57}
+job_den~2013 {c |}{res}         53    1896.114    4582.724   6.329626   29003.53
+
+{com}. gen x_std2 = (job_density_2013 - r(mean))/r(sd)
+{txt}(815 missing values generated)
+
+{com}. reg y_std2 x_std2 if state == 54 & county == 039,  robust
+
+{txt}Linear regression                               Number of obs     = {res}        53
+                                                {txt}F(1, 51)          =  {res}     5.39
+                                                {txt}Prob > F          = {res}    0.0243
+                                                {txt}R-squared         = {res}    0.0972
+                                                {txt}Root MSE          =    {res} .95942
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}    Robust
+{col 1}      y_std2{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 6}x_std2 {c |}{col 14}{res}{space 2}-.3117917{col 26}{space 2} .1343337{col 37}{space 1}   -2.32{col 46}{space 3}0.024{col 54}{space 4}-.5814777{col 67}{space 3}-.0421056
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-6.42e-10{col 26}{space 2} .1317865{col 37}{space 1}   -0.00{col 46}{space 3}1.000{col 54}{space 4}-.2645725{col 67}{space 3} .2645725
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}
+{com}. 
+. *Covariate: Poor Share in 2010
+
+. sum kfr_pooled_p25 if state == 54 & county == 039 
+
+{txt}    Variable {c |}        Obs        Mean    Std. Dev.       Min        Max
+{hline 13}{c +}{hline 57}
+kfr_poole~25 {c |}{res}         53    29244.33    4165.087   19898.99   43895.08
+
+{com}. gen y_std3 = (kfr_pooled_p25 - r(mean))/r(sd)
+{txt}(1,267 missing values generated)
+
+{com}. sum poor_share2010 if state == 54 & county == 039
+
+{txt}    Variable {c |}        Obs        Mean    Std. Dev.       Min        Max
+{hline 13}{c +}{hline 57}
+poor_sh~2010 {c |}{res}         53    .1502473    .0942933          0   .4778029
+
+{com}. gen x_std3 = (poor_share2010 - r(mean))/r(sd)
+{txt}(345 missing values generated)
+
+{com}. reg y_std3 x_std3 if state == 54 & county == 039,  robust
+
+{txt}Linear regression                               Number of obs     = {res}        53
+                                                {txt}F(1, 51)          =  {res}    20.70
+                                                {txt}Prob > F          = {res}    0.0000
+                                                {txt}R-squared         = {res}    0.3164
+                                                {txt}Root MSE          =    {res} .83489
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}    Robust
+{col 1}      y_std3{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 6}x_std3 {c |}{col 14}{res}{space 2} -.562455{col 26}{space 2} .1236359{col 37}{space 1}   -4.55{col 46}{space 3}0.000{col 54}{space 4}-.8106646{col 67}{space 3}-.3142455
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} 1.63e-09{col 26}{space 2} .1146816{col 37}{space 1}    0.00{col 46}{space 3}1.000{col 54}{space 4}-.2302329{col 67}{space 3} .2302329
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}
+{com}. 
+. *Covariate: Fraction of Residents with a High School Diploma or More
+
+. sum kfr_pooled_p75 if state == 54 & county == 039 
+
+{txt}    Variable {c |}        Obs        Mean    Std. Dev.       Min        Max
+{hline 13}{c +}{hline 57}
+kfr_poole~75 {c |}{res}         53    48601.72    6039.629   28199.92    59864.3
+
+{com}. gen y_std4 = (kfr_pooled_p75 - r(mean))/r(sd)
+{txt}(1,266 missing values generated)
+
+{com}. sum frac_coll_plus2010 if state == 54 & county == 039
+
+{txt}    Variable {c |}        Obs        Mean    Std. Dev.       Min        Max
+{hline 13}{c +}{hline 57}
+frac_co~2010 {c |}{res}         53    .2270898    .1455263   .0451475   .6873117
+
+{com}. gen x_std4 = (frac_coll_plus2010 - r(mean))/r(sd)
+{txt}(285 missing values generated)
+
+{com}. reg y_std4 x_std4 if state == 54 & county == 039,  robust
+
+{txt}Linear regression                               Number of obs     = {res}        53
+                                                {txt}F(1, 51)          =  {res}    10.41
+                                                {txt}Prob > F          = {res}    0.0022
+                                                {txt}R-squared         = {res}    0.1017
+                                                {txt}Root MSE          =    {res} .95705
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}    Robust
+{col 1}      y_std4{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 6}x_std4 {c |}{col 14}{res}{space 2} .3188545{col 26}{space 2} .0988303{col 37}{space 1}    3.23{col 46}{space 3}0.002{col 54}{space 4} .1204445{col 67}{space 3} .5172645
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-2.71e-09{col 26}{space 2}  .131461{col 37}{space 1}   -0.00{col 46}{space 3}1.000{col 54}{space 4} -.263919{col 67}{space 3}  .263919
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}
+{com}. 
+. *** Question 9 ***
+
+. * Here we will test covariates relating to our unique hypothesis
+
+. 
+. *Covariate: Single Parent share in 2000 among those with poorer parents
+
+. sum kfr_pooled_p25 if state == 54 & county == 039 
+
+{txt}    Variable {c |}        Obs        Mean    Std. Dev.       Min        Max
+{hline 13}{c +}{hline 57}
+kfr_poole~25 {c |}{res}         53    29244.33    4165.087   19898.99   43895.08
+
+{com}. gen y_std8 = (kfr_pooled_p25 - r(mean))/r(sd)
+{txt}(1,267 missing values generated)
+
+{com}. sum singleparent_share2000 if state == 54 & county == 039
+
+{txt}    Variable {c |}        Obs        Mean    Std. Dev.       Min        Max
+{hline 13}{c +}{hline 57}
+singlep~2000 {c |}{res}         53    .3446557    .1418132   .1341976   .8235294
+
+{com}. gen x_std8 = (singleparent_share2000 - r(mean))/r(sd)
+{txt}(993 missing values generated)
+
+{com}. reg y_std8 x_std8 if state == 54 & county == 039,  robust
+
+{txt}Linear regression                               Number of obs     = {res}        53
+                                                {txt}F(1, 51)          =  {res}    24.76
+                                                {txt}Prob > F          = {res}    0.0000
+                                                {txt}R-squared         = {res}    0.4296
+                                                {txt}Root MSE          =    {res}  .7626
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}    Robust
+{col 1}      y_std8{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 6}x_std8 {c |}{col 14}{res}{space 2}-.6554559{col 26}{space 2} .1317139{col 37}{space 1}   -4.98{col 46}{space 3}0.000{col 54}{space 4}-.9198826{col 67}{space 3}-.3910292
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-2.59e-09{col 26}{space 2} .1047514{col 37}{space 1}   -0.00{col 46}{space 3}1.000{col 54}{space 4}-.2102972{col 67}{space 3} .2102972
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}
+{com}. *Previous covariate is especially true in my home county/area
+
+. sum kfr_pooled_p25 if state == 54 
+
+{txt}    Variable {c |}        Obs        Mean    Std. Dev.       Min        Max
+{hline 13}{c +}{hline 57}
+kfr_poole~25 {c |}{res}        483    31884.76    4448.407   19898.99   51185.72
+
+{com}. gen y_std9 = (kfr_pooled_p25 - r(mean))/r(sd)
+{txt}(1,267 missing values generated)
+
+{com}. sum singleparent_share2000 if state == 54 
+
+{txt}    Variable {c |}        Obs        Mean    Std. Dev.       Min        Max
+{hline 13}{c +}{hline 57}
+singlep~2000 {c |}{res}        484    .2785776    .1009688   .1139706   .8235294
+
+{com}. gen x_std9 = (singleparent_share2000 - r(mean))/r(sd)
+{txt}(993 missing values generated)
+
+{com}. reg y_std9 x_std9 if state == 54,  robust
+
+{txt}Linear regression                               Number of obs     = {res}       483
+                                                {txt}F(1, 481)         =  {res}   156.89
+                                                {txt}Prob > F          = {res}    0.0000
+                                                {txt}R-squared         = {res}    0.2339
+                                                {txt}Root MSE          =    {res} .87619
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}    Robust
+{col 1}      y_std9{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 6}x_std9 {c |}{col 14}{res}{space 2}-.4831217{col 26}{space 2} .0385703{col 37}{space 1}  -12.53{col 46}{space 3}0.000{col 54}{space 4}-.5589087{col 67}{space 3}-.4073346
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-.0000933{col 26}{space 2} .0398669{col 37}{space 1}   -0.00{col 46}{space 3}0.998{col 54}{space 4}-.0784281{col 67}{space 3} .0782414
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}
+{com}. *Covariate: Employment in 2000, for those with wealthier parents
+
+. sum kfr_pooled_p75 if state == 54 & county == 039 
+
+{txt}    Variable {c |}        Obs        Mean    Std. Dev.       Min        Max
+{hline 13}{c +}{hline 57}
+kfr_poole~75 {c |}{res}         53    48601.72    6039.629   28199.92    59864.3
+
+{com}. gen y_std10 = (kfr_pooled_p75 - r(mean))/r(sd)
+{txt}(1,266 missing values generated)
+
+{com}. sum emp2000 if state == 54 & county == 039 
+
+{txt}    Variable {c |}        Obs        Mean    Std. Dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 5}emp2000 {c |}{res}         53    .5414276    .0599524   .3762542   .6530786
+
+{com}. gen x_std10 = (emp2000 - r(mean))/r(sd)
+{txt}(934 missing values generated)
+
+{com}. reg y_std10 x_std10 if state == 54 & county == 039 ,  robust
+
+{txt}Linear regression                               Number of obs     = {res}        53
+                                                {txt}F(1, 51)          =  {res}    20.09
+                                                {txt}Prob > F          = {res}    0.0000
+                                                {txt}R-squared         = {res}    0.2667
+                                                {txt}Root MSE          =    {res} .86469
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}    Robust
+{col 1}     y_std10{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 5}x_std10 {c |}{col 14}{res}{space 2} .5164213{col 26}{space 2}  .115225{col 37}{space 1}    4.48{col 46}{space 3}0.000{col 54}{space 4} .2850975{col 67}{space 3} .7477451
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-4.46e-09{col 26}{space 2} .1187742{col 37}{space 1}   -0.00{col 46}{space 3}1.000{col 54}{space 4}-.2384492{col 67}{space 3} .2384492
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}
+{com}. *Previous covariate has similarly strong correlation for those with less wealthy parents
+
+. sum kfr_pooled_p25 if state == 54 & county == 039 
+
+{txt}    Variable {c |}        Obs        Mean    Std. Dev.       Min        Max
+{hline 13}{c +}{hline 57}
+kfr_poole~25 {c |}{res}         53    29244.33    4165.087   19898.99   43895.08
+
+{com}. gen y_std11 = (kfr_pooled_p25 - r(mean))/r(sd)
+{txt}(1,267 missing values generated)
+
+{com}. sum emp2000 if state == 54 & county == 039 
+
+{txt}    Variable {c |}        Obs        Mean    Std. Dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 5}emp2000 {c |}{res}         53    .5414276    .0599524   .3762542   .6530786
+
+{com}. gen x_std11 = (emp2000 - r(mean))/r(sd)
+{txt}(934 missing values generated)
+
+{com}. reg y_std11 x_std11 if state == 54 & county == 039 ,  robust
+
+{txt}Linear regression                               Number of obs     = {res}        53
+                                                {txt}F(1, 51)          =  {res}    10.59
+                                                {txt}Prob > F          = {res}    0.0020
+                                                {txt}R-squared         = {res}    0.2372
+                                                {txt}Root MSE          =    {res} .88188
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}    Robust
+{col 1}     y_std11{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 5}x_std11 {c |}{col 14}{res}{space 2} .4870771{col 26}{space 2} .1496752{col 37}{space 1}    3.25{col 46}{space 3}0.002{col 54}{space 4} .1865916{col 67}{space 3} .7875625
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-2.96e-09{col 26}{space 2} .1211355{col 37}{space 1}   -0.00{col 46}{space 3}1.000{col 54}{space 4}-.2431897{col 67}{space 3} .2431897
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}
+{com}. * Covariate: Share black in 2010 (most diversity in the area is black), considering those with wealthiest parents
+
+. sum kfr_pooled_p100 if state == 54 & county == 039 
+
+{txt}    Variable {c |}        Obs        Mean    Std. Dev.       Min        Max
+{hline 13}{c +}{hline 57}
+kfr_pool~100 {c |}{res}         53    69641.57     12385.2   34923.34   98670.27
+
+{com}. gen y_std5 = (kfr_pooled_p100 - r(mean))/r(sd)
+{txt}(1,310 missing values generated)
+
+{com}. sum share_black2010 if state == 54 & county == 039
+
+{txt}    Variable {c |}        Obs        Mean    Std. Dev.       Min        Max
+{hline 13}{c +}{hline 57}
+share_b~2010 {c |}{res}         53    .1101075    .1430746   .0012092        .68
+
+{com}. gen x_std5 = (share_black2010 - r(mean))/r(sd)
+{txt}(167 missing values generated)
+
+{com}. reg y_std5 x_std5 if state == 54 & county == 039,  robust
+
+{txt}Linear regression                               Number of obs     = {res}        53
+                                                {txt}F(1, 51)          =  {res}     7.37
+                                                {txt}Prob > F          = {res}    0.0090
+                                                {txt}R-squared         = {res}    0.1749
+                                                {txt}Root MSE          =    {res} .91723
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}    Robust
+{col 1}      y_std5{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 6}x_std5 {c |}{col 14}{res}{space 2}-.4181628{col 26}{space 2}  .154022{col 37}{space 1}   -2.71{col 46}{space 3}0.009{col 54}{space 4} -.727375{col 67}{space 3}-.1089507
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} 1.30e-09{col 26}{space 2} .1259918{col 37}{space 1}    0.00{col 46}{space 3}1.000{col 54}{space 4}-.2529392{col 67}{space 3} .2529392
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}
+{com}. *Covariate: Share black in 2010, but this time considering those with well-off parents
+
+. sum kfr_pooled_p75 if state == 54 & county == 039 
+
+{txt}    Variable {c |}        Obs        Mean    Std. Dev.       Min        Max
+{hline 13}{c +}{hline 57}
+kfr_poole~75 {c |}{res}         53    48601.72    6039.629   28199.92    59864.3
+
+{com}. gen y_std6 = (kfr_pooled_p75 - r(mean))/r(sd)
+{txt}(1,266 missing values generated)
+
+{com}. sum share_black2010 if state == 54 & county == 039
+
+{txt}    Variable {c |}        Obs        Mean    Std. Dev.       Min        Max
+{hline 13}{c +}{hline 57}
+share_b~2010 {c |}{res}         53    .1101075    .1430746   .0012092        .68
+
+{com}. gen x_std6 = (share_black2010 - r(mean))/r(sd)
+{txt}(167 missing values generated)
+
+{com}. reg y_std6 x_std6 if state == 54 & county == 039,  robust
+
+{txt}Linear regression                               Number of obs     = {res}        53
+                                                {txt}F(1, 51)          =  {res}    22.03
+                                                {txt}Prob > F          = {res}    0.0000
+                                                {txt}R-squared         = {res}    0.3768
+                                                {txt}Root MSE          =    {res} .79714
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}    Robust
+{col 1}      y_std6{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 6}x_std6 {c |}{col 14}{res}{space 2}-.6138341{col 26}{space 2} .1307692{col 37}{space 1}   -4.69{col 46}{space 3}0.000{col 54}{space 4}-.8763641{col 67}{space 3} -.351304
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-5.07e-09{col 26}{space 2} .1094952{col 37}{space 1}   -0.00{col 46}{space 3}1.000{col 54}{space 4}-.2198208{col 67}{space 3} .2198208
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}
+{com}. *Covariate: Share black in 2010, but this time considering those with less well-off parents
+
+. sum kfr_pooled_p25 if state == 54 & county == 039 
+
+{txt}    Variable {c |}        Obs        Mean    Std. Dev.       Min        Max
+{hline 13}{c +}{hline 57}
+kfr_poole~25 {c |}{res}         53    29244.33    4165.087   19898.99   43895.08
+
+{com}. gen y_std7 = (kfr_pooled_p25 - r(mean))/r(sd)
+{txt}(1,267 missing values generated)
+
+{com}. sum share_black2010 if state == 54 & county == 039
+
+{txt}    Variable {c |}        Obs        Mean    Std. Dev.       Min        Max
+{hline 13}{c +}{hline 57}
+share_b~2010 {c |}{res}         53    .1101075    .1430746   .0012092        .68
+
+{com}. gen x_std7 = (share_black2010 - r(mean))/r(sd)
+{txt}(167 missing values generated)
+
+{com}. reg y_std7 x_std7 if state == 54 & county == 039,  robust
+
+{txt}Linear regression                               Number of obs     = {res}        53
+                                                {txt}F(1, 51)          =  {res}    53.95
+                                                {txt}Prob > F          = {res}    0.0000
+                                                {txt}R-squared         = {res}    0.3894
+                                                {txt}Root MSE          =    {res} .78903
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}    Robust
+{col 1}      y_std7{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 6}x_std7 {c |}{col 14}{res}{space 2}-.6240172{col 26}{space 2} .0849611{col 37}{space 1}   -7.34{col 46}{space 3}0.000{col 54}{space 4}-.7945837{col 67}{space 3}-.4534508
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-3.76e-09{col 26}{space 2} .1083822{col 37}{space 1}   -0.00{col 46}{space 3}1.000{col 54}{space 4}-.2175863{col 67}{space 3} .2175863
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}
+{com}. 
+. log close
+      {txt}name:  {res}<unnamed>
+       {txt}log:  {res}/Users/kwantlin/My Documents/Harvard 2018-2019/Econ 1152/Project 1/Project_1_Log_File.smcl
+  {txt}log type:  {res}smcl
+ {txt}closed on:  {res}22 Feb 2019, 00:23:42
+{txt}{.-}
+{smcl}
+{txt}{sf}{ul off}
