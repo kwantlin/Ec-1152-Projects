@@ -1,0 +1,315 @@
+{smcl}
+{txt}{sf}{ul off}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}/Users/kwantlin/My Documents/Harvard 2018-2019/Econ 1152/Project 3/Project_3_Log_File.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}18 Apr 2019, 23:47:26
+
+{com}. 
+. use "/Users/kwantlin/Downloads/cmto.dta"
+
+. 
+. *Report control group means
+
+. sum hoh_age child_count child_age hh_income origin_pop2010 if treatment_group == 0
+
+{txt}    Variable {c |}        Obs        Mean    Std. Dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 5}hoh_age {c |}{res}        399    34.51378    8.043486         19         61
+{txt}{space 1}child_count {c |}{res}        399    2.413534    1.282631          1          7
+{txt}{space 3}child_age {c |}{res}        399     6.74423    3.660731          0         15
+{txt}{space 3}hh_income {c |}{res}        399    19658.64    12317.92          0      53032
+{txt}origin_~2010 {c |}{res}        399    5416.434    1504.142        391       9748
+
+{com}. 
+. cap rm table1.txt
+
+. cap rm table1.xls
+
+. 
+. *Run regressions for balance test
+
+. foreach var in hoh_age child_count child_age hh_income origin_pop2010{c -(}
+{txt}  2{com}. reg `var' treatment_group pha, r
+{txt}  3{com}. outreg2 using table1.xls, symbol(**, *, +)
+{txt}  4{com}. 
+. {c )-}
+
+{txt}Linear regression                               Number of obs     = {res}       820
+                                                {txt}F(2, 817)         =  {res}     1.11
+                                                {txt}Prob > F          = {res}    0.3294
+                                                {txt}R-squared         = {res}    0.0027
+                                                {txt}Root MSE          =    {res} 7.8398
+
+{txt}{hline 16}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 17}{c |}{col 29}    Robust
+{col 1}        hoh_age{col 17}{c |}      Coef.{col 29}   Std. Err.{col 41}      t{col 49}   P>|t|{col 57}     [95% Con{col 70}f. Interval]
+{hline 16}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+treatment_group {c |}{col 17}{res}{space 2}-.4625667{col 29}{space 2} .5484415{col 40}{space 1}   -0.84{col 49}{space 3}0.399{col 57}{space 4}-1.539087{col 70}{space 3} .6139536
+{txt}{space 12}pha {c |}{col 17}{res}{space 2} .6708358{col 29}{space 2} .5476217{col 40}{space 1}    1.22{col 49}{space 3}0.221{col 57}{space 4}-.4040754{col 70}{space 3} 1.745747
+{txt}{space 10}_cons {c |}{col 17}{res}{space 2} 34.19938{col 29}{space 2} .4811799{col 40}{space 1}   71.07{col 49}{space 3}0.000{col 57}{space 4} 33.25489{col 70}{space 3} 35.14388
+{txt}{hline 16}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}{browse `"table1.xls"'}
+{browse `"/Users/kwantlin/Downloads"' :dir}{com} : {txt}{stata `"seeout using "table1.txt""':seeout}
+
+Linear regression                               Number of obs     = {res}       820
+                                                {txt}F(2, 817)         =  {res}     5.58
+                                                {txt}Prob > F          = {res}    0.0039
+                                                {txt}R-squared         = {res}    0.0137
+                                                {txt}Root MSE          =    {res} 1.2726
+
+{txt}{hline 16}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 17}{c |}{col 29}    Robust
+{col 1}    child_count{col 17}{c |}      Coef.{col 29}   Std. Err.{col 41}      t{col 49}   P>|t|{col 57}     [95% Con{col 70}f. Interval]
+{hline 16}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+treatment_group {c |}{col 17}{res}{space 2} .0438966{col 29}{space 2} .0889882{col 40}{space 1}    0.49{col 49}{space 3}0.622{col 57}{space 4}-.1307758{col 70}{space 3}  .218569
+{txt}{space 12}pha {c |}{col 17}{res}{space 2} .2971719{col 29}{space 2} .0892306{col 40}{space 1}    3.33{col 49}{space 3}0.001{col 57}{space 4} .1220236{col 70}{space 3} .4723202
+{txt}{space 10}_cons {c |}{col 17}{res}{space 2} 2.274258{col 29}{space 2} .0776157{col 40}{space 1}   29.30{col 49}{space 3}0.000{col 57}{space 4} 2.121908{col 70}{space 3} 2.426607
+{txt}{hline 16}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}{browse `"table1.xls"'}
+{browse `"/Users/kwantlin/Downloads"' :dir}{com} : {txt}{stata `"seeout using "table1.txt""':seeout}
+
+Linear regression                               Number of obs     = {res}       820
+                                                {txt}F(2, 817)         =  {res}     2.34
+                                                {txt}Prob > F          = {res}    0.0970
+                                                {txt}R-squared         = {res}    0.0059
+                                                {txt}Root MSE          =    {res} 3.6923
+
+{txt}{hline 16}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 17}{c |}{col 29}    Robust
+{col 1}      child_age{col 17}{c |}      Coef.{col 29}   Std. Err.{col 41}      t{col 49}   P>|t|{col 57}     [95% Con{col 70}f. Interval]
+{hline 16}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+treatment_group {c |}{col 17}{res}{space 2}-.2046105{col 29}{space 2} .2576274{col 40}{space 1}   -0.79{col 49}{space 3}0.427{col 57}{space 4}-.7103001{col 70}{space 3} .3010791
+{txt}{space 12}pha {c |}{col 17}{res}{space 2} .5289898{col 29}{space 2} .2585085{col 40}{space 1}    2.05{col 49}{space 3}0.041{col 57}{space 4} .0215707{col 70}{space 3} 1.036409
+{txt}{space 10}_cons {c |}{col 17}{res}{space 2} 6.496307{col 29}{space 2} .2143933{col 40}{space 1}   30.30{col 49}{space 3}0.000{col 57}{space 4} 6.075481{col 70}{space 3} 6.917134
+{txt}{hline 16}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}{browse `"table1.xls"'}
+{browse `"/Users/kwantlin/Downloads"' :dir}{com} : {txt}{stata `"seeout using "table1.txt""':seeout}
+
+Linear regression                               Number of obs     = {res}       820
+                                                {txt}F(2, 817)         =  {res}     4.25
+                                                {txt}Prob > F          = {res}    0.0145
+                                                {txt}R-squared         = {res}    0.0103
+                                                {txt}Root MSE          =    {res}  12008
+
+{txt}{hline 16}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 17}{c |}{col 29}    Robust
+{col 1}      hh_income{col 17}{c |}      Coef.{col 29}   Std. Err.{col 41}      t{col 49}   P>|t|{col 57}     [95% Con{col 70}f. Interval]
+{hline 16}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+treatment_group {c |}{col 17}{res}{space 2}-498.9723{col 29}{space 2} 840.2586{col 40}{space 1}   -0.59{col 49}{space 3}0.553{col 57}{space 4}-2148.292{col 70}{space 3} 1150.348
+{txt}{space 12}pha {c |}{col 17}{res}{space 2}-2404.579{col 29}{space 2} 837.8033{col 40}{space 1}   -2.87{col 49}{space 3}0.004{col 57}{space 4} -4049.08{col 70}{space 3} -760.079
+{txt}{space 10}_cons {c |}{col 17}{res}{space 2}  20785.6{col 29}{space 2} 745.7974{col 40}{space 1}   27.87{col 49}{space 3}0.000{col 57}{space 4}  19321.7{col 70}{space 3} 22249.51
+{txt}{hline 16}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}{browse `"table1.xls"'}
+{browse `"/Users/kwantlin/Downloads"' :dir}{com} : {txt}{stata `"seeout using "table1.txt""':seeout}
+
+Linear regression                               Number of obs     = {res}       820
+                                                {txt}F(2, 817)         =  {res}     4.94
+                                                {txt}Prob > F          = {res}    0.0074
+                                                {txt}R-squared         = {res}    0.0131
+                                                {txt}Root MSE          =    {res} 1509.3
+
+{txt}{hline 16}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 17}{c |}{col 29}    Robust
+{col 1} origin_pop2010{col 17}{c |}      Coef.{col 29}   Std. Err.{col 41}      t{col 49}   P>|t|{col 57}     [95% Con{col 70}f. Interval]
+{hline 16}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+treatment_group {c |}{col 17}{res}{space 2}-208.8352{col 29}{space 2} 105.5613{col 40}{space 1}   -1.98{col 49}{space 3}0.048{col 57}{space 4}-416.0386{col 70}{space 3}-1.631789
+{txt}{space 12}pha {c |}{col 17}{res}{space 2}-281.1392{col 29}{space 2} 104.9711{col 40}{space 1}   -2.68{col 49}{space 3}0.008{col 57}{space 4} -487.184{col 70}{space 3}-75.09452
+{txt}{space 10}_cons {c |}{col 17}{res}{space 2} 5548.196{col 29}{space 2} 96.07575{col 40}{space 1}   57.75{col 49}{space 3}0.000{col 57}{space 4} 5359.611{col 70}{space 3}  5736.78
+{txt}{hline 16}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}{browse `"table1.xls"'}
+{browse `"/Users/kwantlin/Downloads"' :dir}{com} : {txt}{stata `"seeout using "table1.txt""':seeout}
+
+{com}. 
+. 
+. *Estimate compliance rate for the CMTO experiment
+
+. reg received_cmto_services treatment_group pha, r
+
+{txt}Linear regression                               Number of obs     = {res}       820
+                                                {txt}F(2, 817)         =  {res}   781.78
+                                                {txt}Prob > F          = {res}    0.0000
+                                                {txt}R-squared         = {res}    0.6292
+                                                {txt}Root MSE          =    {res} .29854
+
+{txt}{hline 16}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 17}{c |}{col 29}    Robust
+{col 1}received_cmto~s{col 17}{c |}      Coef.{col 29}   Std. Err.{col 41}      t{col 49}   P>|t|{col 57}     [95% Con{col 70}f. Interval]
+{hline 16}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+treatment_group {c |}{col 17}{res}{space 2} .7751097{col 29}{space 2} .0202637{col 40}{space 1}   38.25{col 49}{space 3}0.000{col 57}{space 4} .7353347{col 70}{space 3} .8148847
+{txt}{space 12}pha {c |}{col 17}{res}{space 2} .0604793{col 29}{space 2} .0205426{col 40}{space 1}    2.94{col 49}{space 3}0.003{col 57}{space 4} .0201568{col 70}{space 3} .1008019
+{txt}{space 10}_cons {c |}{col 17}{res}{space 2} -.028345{col 29}{space 2} .0097325{col 40}{space 1}   -2.91{col 49}{space 3}0.004{col 57}{space 4}-.0474486{col 70}{space 3}-.0092413
+{txt}{hline 16}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}
+{com}. local pi = _b[treatment_group]
+
+. 
+. *Estimate ITT
+
+. reg leased_up_opp treatment_group pha, r
+
+{txt}Linear regression                               Number of obs     = {res}       820
+                                                {txt}F(2, 817)         =  {res}    21.22
+                                                {txt}Prob > F          = {res}    0.0000
+                                                {txt}R-squared         = {res}    0.0505
+                                                {txt}Root MSE          =    {res} .40487
+
+{txt}{hline 16}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 17}{c |}{col 29}    Robust
+{col 1}  leased_up_opp{col 17}{c |}      Coef.{col 29}   Std. Err.{col 41}      t{col 49}   P>|t|{col 57}     [95% Con{col 70}f. Interval]
+{hline 16}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+treatment_group {c |}{col 17}{res}{space 2} .1804002{col 29}{space 2} .0280218{col 40}{space 1}    6.44{col 49}{space 3}0.000{col 57}{space 4}  .125397{col 70}{space 3} .2354034
+{txt}{space 12}pha {c |}{col 17}{res}{space 2}-.0450926{col 29}{space 2}  .028236{col 40}{space 1}   -1.60{col 49}{space 3}0.111{col 57}{space 4}-.1005163{col 70}{space 3} .0103311
+{txt}{space 10}_cons {c |}{col 17}{res}{space 2} .1489532{col 29}{space 2}  .020774{col 40}{space 1}    7.17{col 49}{space 3}0.000{col 57}{space 4} .1081764{col 70}{space 3} .1897299
+{txt}{hline 16}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}
+{com}. local alpha = _b[treatment_group]
+
+. 
+. *Estimate TOT
+
+. *Method 1
+
+. display `alpha'/`pi'
+{res}.23274153
+
+{com}. 
+. *Draw graph of distribution of the change in neighborhood quality
+
+. gen change = forecast_kravg30_p25 - origin_forecast_kravg30_p25 
+
+. 
+. twoway (kdensity change if treatment_group == 1,  lwidth(thick)) (kdensity change if treatment_group == 0), xtitle("Change in Neighborhood Quality") ytitle("Density") graphregion(color(white)) bgcolor(white) legend(order(1 "Treatment Group" 2 "Control Group")) 
+{res}
+{com}. 
+. graph save Graph "/Users/kwantlin/My Documents/Harvard 2018-2019/Econ 1152/Project 3/Graph2.gph", replace
+{res}{txt}(file /Users/kwantlin/My Documents/Harvard 2018-2019/Econ 1152/Project 3/Graph2.gph saved)
+
+{com}. 
+. *Heterogeneity in ITT
+
+. *(i) family income above the median in the sample and below the median in the sample; 
+
+. 
+. sum hh_income, d
+
+              {txt}Household income ($) at baseline
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        0              0
+{txt}10%    {res}   2633.5              0       {txt}Obs         {res}        820
+{txt}25%    {res}  10839.5              0       {txt}Sum of Wgt. {res}        820
+
+{txt}50%    {res}  18986.5                      {txt}Mean          {res} 19418.04
+                        {txt}Largest       Std. Dev.     {res} 12055.02
+{txt}75%    {res}    27867          51089
+{txt}90%    {res}    36028          52972       {txt}Variance      {res} 1.45e+08
+{txt}95%    {res}    39864          53003       {txt}Skewness      {res} .2774631
+{txt}99%    {res}    49520          53032       {txt}Kurtosis      {res} 2.495509
+
+{com}. gen abovemedian = (hh_income>r(p50)) & !missing(hh_income)
+
+. 
+. ivregress 2sls leased_up_opp (received_cmto_services = treatment_group) pha if abovemedian == 1, r
+{res}
+{txt}{col 1}Instrumental variables (2SLS) regression{col 51}Number of obs{col 67}= {res}       410
+{txt}{col 1}{col 51}Wald chi2({res}2{txt}){col 67}= {res}     26.11
+{txt}{col 1}{col 51}Prob > chi2{col 67}= {res}    0.0000
+{txt}{col 1}{col 51}R-squared{col 67}= {res}    0.0847
+{txt}{col 51}Root MSE{col 67}=    {res} .37914
+
+{txt}{hline 23}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 24}{c |}{col 36}    Robust
+{col 1}         leased_up_opp{col 24}{c |}      Coef.{col 36}   Std. Err.{col 48}      z{col 56}   P>|z|{col 64}     [95% Con{col 77}f. Interval]
+{hline 23}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+received_cmto_services {c |}{col 24}{res}{space 2} .2395519{col 36}{space 2} .0480553{col 47}{space 1}    4.98{col 56}{space 3}0.000{col 64}{space 4} .1453652{col 77}{space 3} .3337386
+{txt}{space 19}pha {c |}{col 24}{res}{space 2} -.059261{col 36}{space 2} .0378658{col 47}{space 1}   -1.57{col 56}{space 3}0.118{col 64}{space 4}-.1334766{col 77}{space 3} .0149546
+{txt}{space 17}_cons {c |}{col 24}{res}{space 2} .1251859{col 36}{space 2} .0262646{col 47}{space 1}    4.77{col 56}{space 3}0.000{col 64}{space 4} .0737082{col 77}{space 3} .1766637
+{txt}{hline 23}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 15 4}Instrumented:{space 2}received_cmto_services{p_end}
+{p 0 15 4}Instruments:{space 3}pha treatment_group{p_end}
+
+{com}. outreg2 using table2.xls, symbol(**, *, +) replace ctitle(above median)
+{txt}{browse `"table2.xls"'}
+{browse `"/Users/kwantlin/Downloads"' :dir}{com} : {txt}{stata `"seeout using "table2.txt""':seeout}
+
+{com}. ivregress 2sls leased_up_opp (received_cmto_services = treatment_group) pha if abovemedian == 0 , r
+{res}
+{txt}{col 1}Instrumental variables (2SLS) regression{col 51}Number of obs{col 67}= {res}       410
+{txt}{col 1}{col 51}Wald chi2({res}2{txt}){col 67}= {res}     19.29
+{txt}{col 1}{col 51}Prob > chi2{col 67}= {res}    0.0001
+{txt}{col 1}{col 51}R-squared{col 67}= {res}    0.0628
+{txt}{col 51}Root MSE{col 67}=    {res} .41714
+
+{txt}{hline 23}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 24}{c |}{col 36}    Robust
+{col 1}         leased_up_opp{col 24}{c |}      Coef.{col 36}   Std. Err.{col 48}      z{col 56}   P>|z|{col 64}     [95% Con{col 77}f. Interval]
+{hline 23}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+received_cmto_services {c |}{col 24}{res}{space 2} .2254983{col 36}{space 2} .0525967{col 47}{space 1}    4.29{col 56}{space 3}0.000{col 64}{space 4} .1224108{col 77}{space 3} .3285859
+{txt}{space 19}pha {c |}{col 24}{res}{space 2}-.0692433{col 36}{space 2} .0414979{col 47}{space 1}   -1.67{col 56}{space 3}0.095{col 64}{space 4}-.1505778{col 77}{space 3} .0120912
+{txt}{space 17}_cons {c |}{col 24}{res}{space 2} .1912704{col 36}{space 2} .0313565{col 47}{space 1}    6.10{col 56}{space 3}0.000{col 64}{space 4} .1298127{col 77}{space 3} .2527281
+{txt}{hline 23}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 15 4}Instrumented:{space 2}received_cmto_services{p_end}
+{p 0 15 4}Instruments:{space 3}pha treatment_group{p_end}
+
+{com}. outreg2 using table2.xls, symbol(**, *, +) ctitle(below median)
+{txt}{browse `"table2.xls"'}
+{browse `"/Users/kwantlin/Downloads"' :dir}{com} : {txt}{stata `"seeout using "table2.txt""':seeout}
+
+{com}. 
+. *(ii)Each Public Housing Authority separately (KCHA and SHA)
+
+. ivregress 2sls leased_up_opp (received_cmto_services = treatment_group) if  pha == 1, r
+{res}
+{txt}{col 1}Instrumental variables (2SLS) regression{col 51}Number of obs{col 67}= {res}       379
+{txt}{col 1}{col 51}Wald chi2({res}1{txt}){col 67}= {res}      6.24
+{txt}{col 1}{col 51}Prob > chi2{col 67}= {res}    0.0125
+{txt}{col 1}{col 51}R-squared{col 67}= {res}    0.0202
+{txt}{col 51}Root MSE{col 67}=    {res} .39237
+
+{txt}{hline 23}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 24}{c |}{col 36}    Robust
+{col 1}         leased_up_opp{col 24}{c |}      Coef.{col 36}   Std. Err.{col 48}      z{col 56}   P>|z|{col 64}     [95% Con{col 77}f. Interval]
+{hline 23}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+received_cmto_services {c |}{col 24}{res}{space 2} .1197396{col 36}{space 2} .0479514{col 47}{space 1}    2.50{col 56}{space 3}0.013{col 64}{space 4} .0257566{col 77}{space 3} .2137226
+{txt}{space 17}_cons {c |}{col 24}{res}{space 2}  .144385{col 36}{space 2} .0257027{col 47}{space 1}    5.62{col 56}{space 3}0.000{col 64}{space 4} .0940086{col 77}{space 3} .1947615
+{txt}{hline 23}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 15 4}Instrumented:{space 2}received_cmto_services{p_end}
+{p 0 15 4}Instruments:{space 3}treatment_group{p_end}
+
+{com}. outreg2 using table2.xls, symbol(**, *, +) ctitle(pha1)
+{txt}{browse `"table2.xls"'}
+{browse `"/Users/kwantlin/Downloads"' :dir}{com} : {txt}{stata `"seeout using "table2.txt""':seeout}
+
+{com}. ivregress 2sls leased_up_opp (received_cmto_services = treatment_group) if  pha == 0 , r
+{res}
+{txt}{col 1}Instrumental variables (2SLS) regression{col 51}Number of obs{col 67}= {res}       441
+{txt}{col 1}{col 51}Wald chi2({res}1{txt}){col 67}= {res}     43.94
+{txt}{col 1}{col 51}Prob > chi2{col 67}= {res}    0.0000
+{txt}{col 1}{col 51}R-squared{col 67}= {res}    0.1290
+{txt}{col 51}Root MSE{col 67}=    {res} .40008
+
+{txt}{hline 23}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 24}{c |}{col 36}    Robust
+{col 1}         leased_up_opp{col 24}{c |}      Coef.{col 36}   Std. Err.{col 48}      z{col 56}   P>|z|{col 64}     [95% Con{col 77}f. Interval]
+{hline 23}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+received_cmto_services {c |}{col 24}{res}{space 2} .3459119{col 36}{space 2}  .052184{col 47}{space 1}    6.63{col 56}{space 3}0.000{col 64}{space 4} .2436332{col 77}{space 3} .4481907
+{txt}{space 17}_cons {c |}{col 24}{res}{space 2} .1132075{col 36}{space 2} .0217611{col 47}{space 1}    5.20{col 56}{space 3}0.000{col 64}{space 4} .0705566{col 77}{space 3} .1558585
+{txt}{hline 23}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 15 4}Instrumented:{space 2}received_cmto_services{p_end}
+{p 0 15 4}Instruments:{space 3}treatment_group{p_end}
+
+{com}. outreg2 using table2.xls, symbol(**, *, +) ctitle(pha0)
+{txt}{browse `"table2.xls"'}
+{browse `"/Users/kwantlin/Downloads"' :dir}{com} : {txt}{stata `"seeout using "table2.txt""':seeout}
+
+{com}. 
+. log close
+      {txt}name:  {res}<unnamed>
+       {txt}log:  {res}/Users/kwantlin/My Documents/Harvard 2018-2019/Econ 1152/Project 3/Project_3_Log_File.smcl
+  {txt}log type:  {res}smcl
+ {txt}closed on:  {res}18 Apr 2019, 23:47:29
+{txt}{.-}
+{smcl}
+{txt}{sf}{ul off}

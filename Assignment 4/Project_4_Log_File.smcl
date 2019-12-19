@@ -1,0 +1,28 @@
+{smcl}
+{txt}{sf}{ul off}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}/Users/kwantlin/My Documents/Harvard 2018-2019/Econ 1152/Project 4/Project_4_Log_File.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res} 2 May 2019, 20:14:33
+
+{com}. *** Empirical Project 4
+
+. 
+. * change directories
+
+. cd "/Users/kwantlin/My Documents/Harvard 2018-2019/Econ 1152/Project 4"
+{res}/Users/kwantlin/My Documents/Harvard 2018-2019/Econ 1152/Project 4
+
+{com}. 
+. 
+. 
+. * start log
+
+. log close
+      {txt}name:  {res}<unnamed>
+       {txt}log:  {res}/Users/kwantlin/My Documents/Harvard 2018-2019/Econ 1152/Project 4/Project_4_Log_File.smcl
+  {txt}log type:  {res}smcl
+ {txt}closed on:  {res} 2 May 2019, 20:14:33
+{txt}{.-}
+{smcl}
+{txt}{sf}{ul off}
